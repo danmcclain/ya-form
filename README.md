@@ -1,6 +1,6 @@
 # Ya-form
 
-This README outlines the details of collaborating on this Ember addon.
+I got ya form right here!
 
 ## Installation
 
