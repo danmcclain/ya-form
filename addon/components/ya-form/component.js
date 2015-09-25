@@ -11,5 +11,5 @@ const YaFormComponent = Component.extend({
 });
 
 export default YaFormComponent.reopenClass({
-  positionalParams: ['model']
+  positionalParams: ['wrapped']
 });

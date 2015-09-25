@@ -2,19 +2,21 @@ import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-const { set } = Ember;
+const { Object: EmberObject, set } = Ember;
 
 moduleForComponent('ya-form', {
   integration: true,
   beforeEach() {
-    set(this, 'user', { firstName: 'Derek', lastName: 'Zoolander' });
+    set(this, 'wrapped', EmberObject.create({
+      user: { firstName: 'Derek', lastName: 'Zoolander' }
+    }));
   }
 });
 
 test('should render the form', function(assert) {
   this.render(hbs`<div>
-                    {{#ya-form user as |form|}}
-                      <p>{{form.model.firstName}}</p>
+                    {{#ya-form wrapped as |form|}}
+                      <p>{{form.wrapped.user.firstName}}</p>
                     {{/ya-form}}
                   </div>`);
 
